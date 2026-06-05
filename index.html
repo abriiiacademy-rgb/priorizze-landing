@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===================== SEO ===================== -->
+  <title>Priorizze Móveis Planejados · Marcenaria de arquitetura em Indaial</title>
+  <meta name="description" content="Móveis planejados de alto padrão em Indaial, SC. Projeto de arquitetura, ferragem premium e acabamento invisível. Agende uma visita ao showroom." />
+  <meta name="theme-color" content="#C45822" />
+  <link rel="icon" type="image/png" href="priorizze-assets/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Priorizze Móveis Planejados · Marcenaria de arquitetura" />
+  <meta property="og:description" content="O mesmo MDF, outra experiência. Projeto de arquitetura em marcenaria que dura décadas. Showroom em Indaial, SC." />
+  <!-- TROCAR: URL absoluta da imagem de compartilhamento (1200x630) -->
+  <meta property="og:image" content="[OG-IMAGE-1200x630.jpg]" />
+  <!-- TROCAR: URL final do site -->
+  <meta property="og:url" content="https://www.priorizze.com.br/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===================== Fontes ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <!-- ===================== Meta Pixel ===================== -->
+  <!-- TROCAR: [META_PIXEL_ID] pelo ID real do pixel (em 2 lugares: init e noscript) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[META_PIXEL_ID]');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* ===================== Tokens ===================== */
+    :root {
+      --terracota: #C45822;
+      --terracota-dark: #A8451A;
+      --bege: #F5E6D3;
+      --bege-soft: #F0E3D0;
+      --fundo: #FAF6F0;
+      --preto: #1A1A1A;
+      --grafite: #3a352f;
+      --dourado: #D4A574;
+      --linha: rgba(26,26,26,0.10);
+      --serif: 'Playfair Display', Georgia, serif;
+      --cond: 'Bebas Neue', 'Montserrat', sans-serif;
+      --sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max: 1180px;
+      --pad-x: clamp(20px, 5vw, 64px);
+      --shadow: 0 24px 60px -28px rgba(60,40,26,0.34);
+      --shadow-soft: 0 14px 40px -24px rgba(60,40,26,0.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--preto);
+      background: var(--fundo);
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: .005em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.14; margin: 0; letter-spacing: -0.005em; }
+    em { font-style: italic; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    ::selection { background: var(--terracota); color: #fff; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); position: relative; z-index: 1; }
+    .section { padding: clamp(72px, 10vw, 150px) 0; position: relative; overflow: hidden; }
+
+    /* Eyebrow com selo */
+    .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; }
+    .eyebrow span {
+      font-family: var(--sans); font-size: .72rem; font-weight: 600;
+      letter-spacing: .26em; text-transform: uppercase; color: var(--terracota);
+    }
+    .eyebrow::before { content: ""; width: 38px; height: 1px; background: var(--dourado); display: block; }
+    .eyebrow.center { justify-content: center; }
+
+    .section-title { font-size: clamp(2.1rem, 5vw, 3.7rem); font-weight: 500; }
+    .section-title em { color: var(--terracota); font-weight: 600; }
+    .lead { font-size: clamp(1.05rem, 1.5vw, 1.22rem); max-width: 54ch; color: var(--grafite); }
+
+    /* Sublinhado-pincel para palavras-chave (referência da identidade) */
+    .mark {
+      background-image: linear-gradient(120deg, var(--dourado), var(--dourado));
+      background-repeat: no-repeat;
+      background-position: 0 92%;
+      background-size: 100% 34%;
+      padding: 0 .04em;
+    }
+
+    /* Motivo floral (selo da marca) como marca-d'água */
+    .motif { position: absolute; z-index: 0; pointer-events: none; user-select: none; opacity: .05; width: clamp(280px, 34vw, 520px); }
+
+    /* ===================== Reveal on scroll ===================== */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ===================== Botões ===================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; cursor: pointer; border: none; text-decoration: none;
+      font-family: var(--sans); font-weight: 600; font-size: .98rem; letter-spacing: .02em;
+      padding: 17px 38px; border-radius: 50px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    }
+    .btn-primary { background: var(--terracota); color: #fff; box-shadow: 0 14px 30px -12px rgba(196,88,34,.65); }
+    .btn-primary:hover { background: var(--terracota-dark); transform: translateY(-3px); box-shadow: 0 20px 38px -14px rgba(196,88,34,.7); }
+    .btn-outline { background: transparent; color: var(--preto); border: 1px solid rgba(26,26,26,.25); }
+    .btn-outline:hover { border-color: var(--terracota); color: var(--terracota); }
+    .btn .arrow { transition: transform .25s ease; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    /* ===================== Header ===================== */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px var(--pad-x); transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
+    }
+    .header.solid { background: rgba(250,246,240,.9); backdrop-filter: saturate(140%) blur(12px); box-shadow: 0 1px 0 var(--linha); padding-top: 13px; padding-bottom: 13px; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { height: 38px; width: auto; transition: height .4s ease; }
+    .header.solid .logo img { height: 34px; }
+    .logo .emblema-dark, .logo .word-dark { display: none; }
+    .header.solid .logo .emblema-white, .header.solid .logo .word-white { display: none; }
+    .header.solid .logo .emblema-dark, .header.solid .logo .word-dark { display: inline-block; }
+    .logo .word { font-family: var(--sans); font-weight: 300; font-size: 1.18rem; letter-spacing: .34em; padding-left: .1em; }
+    .logo .word-white { color: #fff; }
+    .logo .word-dark { color: var(--preto); }
+    .header .nav-cta { font-size: .82rem; padding: 12px 26px; }
+    .header:not(.solid) .nav-cta { background: rgba(255,255,255,.14); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.4); color: #fff; box-shadow: none; }
+    .header:not(.solid) .nav-cta:hover { background: rgba(255,255,255,.24); }
+    @media (max-width: 640px){ .header .nav-cta { display: none; } .logo .word { font-size: 1rem; letter-spacing: .28em; } }
+
+    /* ===================== Hero ===================== */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; }
+    @media (max-width: 768px){ .hero { min-height: 88vh; } }
+    .hero__bg {
+      position: absolute; inset: 0; z-index: 0;
+      /* TROCAR: imagem de fundo do hero -> [IMAGEM-HERO-AMBIENTE-PREMIUM.jpg] */
+      background: url('[IMAGEM-HERO-AMBIENTE-PREMIUM.jpg]') center/cover no-repeat, #2a2320;
+      transform: scale(1.04);
+    }
+    .hero__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        radial-gradient(120% 80% at 80% 0%, rgba(196,88,34,.18) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(26,22,20,.34) 0%, rgba(26,22,20,.12) 38%, rgba(20,16,14,.82) 100%);
+    }
+    .hero__emblema { position: absolute; right: -3%; bottom: -4%; width: clamp(320px, 36vw, 600px); opacity: .10; z-index: 1; }
+    .hero__content { position: relative; z-index: 2; padding-bottom: clamp(64px, 11vh, 130px); padding-top: 130px; }
+    .hero h1 { font-size: clamp(2.6rem, 6.2vw, 5rem); font-weight: 500; max-width: 17ch; text-shadow: 0 2px 40px rgba(0,0,0,.4); }
+    .hero h1 em { color: var(--dourado); font-weight: 600; }
+    .hero__sub { font-size: clamp(1.02rem, 2vw, 1.32rem); margin: 26px 0 38px; font-weight: 400; opacity: .96; max-width: 42ch; line-height: 1.6; }
+    .hero__sub strong { font-weight: 600; }
+    .hero__scroll { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 2; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; opacity: .7; }
+
+    /* ===================== Seção 2 — Diferenciais ===================== */
+    .diferenciais { background: var(--fundo); }
+    .diferenciais .head { max-width: 660px; margin-bottom: 60px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    @media (max-width: 860px){ .cards { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+    .card {
+      background: #fff; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-soft);
+      display: flex; flex-direction: column; border: 1px solid rgba(212,165,116,.18);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card__img { aspect-ratio: 4/3; background: var(--bege) center/cover no-repeat; }
+    .card__body { padding: 28px 28px 32px; position: relative; }
+    .card__num { font-family: var(--cond); font-size: 1.6rem; letter-spacing: .1em; line-height: 1; color: var(--terracota); display: block; margin-bottom: 8px; }
+    .card__body h3 { font-size: 1.6rem; margin-bottom: 10px; font-weight: 600; }
+    .card__body p { font-size: .96rem; color: var(--grafite); margin: 0; }
+
+    /* ===================== Seção 3 — Arquiteta ===================== */
+    .arquiteta { background: linear-gradient(180deg, var(--fundo) 0%, var(--bege-soft) 100%); }
+    .arquiteta__grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+    @media (max-width: 880px){ .arquiteta__grid { grid-template-columns: 1fr; } }
+    .arquiteta__media { position: relative; }
+    .arquiteta__media::before { content: ""; position: absolute; inset: -14px -14px 14px 14px; border: 1px solid var(--dourado); border-radius: 18px; z-index: 0; }
+    .arquiteta__media img, .arquiteta__media video { position: relative; z-index: 1; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 18px; box-shadow: var(--shadow); background: var(--bege); }
+    .arquiteta__media .seal { position: absolute; z-index: 2; right: -22px; bottom: -22px; width: 96px; height: 96px; background: var(--terracota); border-radius: 50%; display: grid; place-items: center; box-shadow: var(--shadow-soft); }
+    .arquiteta__media .seal img { width: 58px; height: auto; aspect-ratio: auto; border-radius: 0; box-shadow: none; background: none; }
+    .arquiteta h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 26px; font-weight: 500; }
+    .arquiteta h2 em { color: var(--terracota); font-weight: 600; }
+    .arquiteta p { color: var(--grafite); margin: 0 0 20px; max-width: 52ch; }
+    .arquiteta .destaque { font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 2.7vw, 2.1rem); line-height: 1.32; color: var(--preto); border-left: 2px solid var(--terracota); padding-left: 26px; margin-top: 30px; }
+
+    /* ===================== Seção 4 — Galeria ===================== */
+    .galeria { background: var(--bege-soft); }
+    .galeria .head { text-align: center; max-width: 660px; margin: 0 auto 60px; }
+    .grid-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 860px){
+      .grid-galeria { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 78%; grid-template-rows: 1fr; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; }
+      .grid-galeria .proj { scroll-snap-align: center; }
+    }
+    .proj { position: relative; border-radius: 14px; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; background: var(--bege); box-shadow: var(--shadow-soft); }
+    .proj img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .proj:hover img { transform: scale(1.07); }
+    .proj__cap {
+      position: absolute; inset: auto 0 0 0; padding: 18px 20px; color: #fff;
+      font-size: .9rem; font-weight: 500; letter-spacing: .03em;
+      background: linear-gradient(0deg, rgba(20,16,14,.82), transparent);
+      opacity: 0; transform: translateY(10px); transition: opacity .4s ease, transform .4s ease;
+    }
+    .proj__cap::before { content: ""; display: inline-block; width: 16px; height: 1px; background: var(--dourado); margin-right: 9px; vertical-align: middle; }
+    .proj:hover .proj__cap, .proj:focus-within .proj__cap { opacity: 1; transform: none; }
+    @media (max-width: 860px){ .proj__cap { opacity: 1; transform: none; } }
+
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(18,14,12,.94); padding: 4vw; backdrop-filter: blur(4px); }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 86vh; border-radius: 10px; box-shadow: 0 40px 100px rgba(0,0,0,.7); }
+    .lightbox__close { position: absolute; top: 22px; right: 28px; background: none; border: none; color: #fff; font-size: 2.6rem; line-height: 1; cursor: pointer; opacity: .85; }
+    .lightbox__close:hover { opacity: 1; }
+    .lightbox__cap { position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; color: #fff; font-family: var(--serif); font-style: italic; font-size: 1.35rem; }
+
+    /* ===================== Seção 5 — Depoimentos ===================== */
+    .provas { background: var(--terracota); color: #fff; }
+    .provas .eyebrow span { color: var(--bege); }
+    .provas .eyebrow::before { background: rgba(255,255,255,.5); }
+    .provas .section-title { color: #fff; }
+    .provas .section-title em { color: var(--bege); }
+    .provas .head { text-align: center; max-width: 660px; margin: 0 auto 60px; }
+    .provas .motif { opacity: .07; }
+    .depoimentos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    @media (max-width: 860px){
+      .depoimentos { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; }
+      .depoimento { scroll-snap-align: center; }
+    }
+    .depoimento { background: var(--fundo); color: var(--preto); border-radius: 18px; padding: 34px 32px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .depoimento .aspas { font-family: var(--serif); font-size: 3.4rem; line-height: .6; color: var(--dourado); height: .5em; }
+    .depoimento__texto { font-family: var(--serif); font-style: italic; font-size: 1.34rem; line-height: 1.46; color: var(--preto); margin: 14px 0 26px; }
+    .depoimento__quem { display: flex; align-items: center; gap: 14px; margin-top: auto; }
+    .depoimento__quem img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; background: var(--bege); }
+    .depoimento__nome { font-weight: 600; font-size: .98rem; }
+    .depoimento__amb { font-size: .82rem; color: #7a7066; }
+
+    /* ===================== Seção 6 — Showroom ===================== */
+    .showroom { background: var(--fundo); }
+    .showroom__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+    @media (max-width: 880px){ .showroom__grid { grid-template-columns: 1fr; } }
+    .showroom__media { position: relative; }
+    .showroom__media img { width: 100%; border-radius: 18px; aspect-ratio: 4/3; object-fit: cover; box-shadow: var(--shadow); background: var(--bege); }
+    .showroom__media::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--dourado); border-radius: 18px; z-index: -1; }
+    .showroom h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 24px; font-weight: 500; }
+    .showroom h2 em { color: var(--terracota); font-weight: 600; }
+    .showroom p { color: var(--grafite); max-width: 48ch; }
+    .showroom__bullets { list-style: none; padding: 0; margin: 30px 0; }
+    .showroom__bullets li { position: relative; padding-left: 34px; margin-bottom: 16px; font-weight: 500; }
+    .showroom__bullets li::before { content: ""; position: absolute; left: 0; top: .62em; width: 20px; height: 1px; background: var(--terracota); }
+    .showroom__info { font-size: .96rem; color: var(--grafite); margin: 24px 0; padding: 18px 22px; background: var(--bege); border-radius: 12px; }
+    .showroom__info strong { display: block; font-weight: 600; color: var(--preto); margin-bottom: 2px; }
+    .showroom__map { margin-top: 28px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-soft); }
+    .showroom__map iframe { width: 100%; height: 280px; border: 0; display: block; }
+
+    /* ===================== Seção 7 — Formulário ===================== */
+    .agendar { background: var(--preto); color: #fff; }
+    .agendar .motif { opacity: .06; }
+    .agendar__grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+    @media (max-width: 880px){ .agendar__grid { grid-template-columns: 1fr; } }
+    .agendar .eyebrow span { color: var(--dourado); }
+    .agendar .eyebrow::before { background: var(--dourado); }
+    .agendar h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); color: #fff; font-weight: 500; }
+    .agendar h2 em { color: var(--dourado); font-weight: 600; }
+    .agendar__intro p { opacity: .85; max-width: 40ch; font-size: 1.08rem; }
+    .agendar__intro .emblema { width: 72px; opacity: .9; margin-top: 28px; }
+    .form-card { background: var(--fundo); color: var(--preto); border-radius: 22px; padding: clamp(30px, 4vw, 46px); box-shadow: var(--shadow); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: .76rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; color: var(--grafite); }
+    .field input, .field select {
+      width: 100%; font-family: var(--sans); font-size: 1rem; padding: 14px 16px;
+      border: 1px solid var(--linha); border-radius: 12px; background: #fff; color: var(--preto);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--terracota); box-shadow: 0 0 0 3px rgba(196,88,34,.14); }
+    .field .error-msg { color: #B3261E; font-size: .8rem; margin-top: 6px; display: none; }
+    .field.invalid input, .field.invalid select { border-color: #B3261E; }
+    .field.invalid .error-msg { display: block; }
+    .form-card .btn-primary { width: 100%; justify-content: center; margin-top: 8px; font-size: 1.05rem; }
+    .microcopy { text-align: center; font-size: .8rem; color: #8a7f73; margin: 16px 0 0; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+    .form-success { display: none; text-align: center; padding: 30px 12px; }
+    .form-success .emblema { width: 74px; margin: 0 auto 18px; }
+    .form-success h3 { font-size: 2rem; color: var(--terracota); margin-bottom: 14px; font-weight: 600; }
+    .form-success p { color: var(--grafite); max-width: 38ch; margin: 0 auto; }
+
+    /* ===================== Seção 8 — Rodapé ===================== */
+    .footer { background: #141110; color: #efe9e1; padding: clamp(56px, 8vw, 92px) 0 38px; position: relative; overflow: hidden; }
+    .footer .motif { opacity: .05; right: -6%; top: -10%; }
+    .footer__top { display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between; align-items: flex-start; }
+    .footer__brand img { height: 92px; width: auto; }
+    .footer__brand p { opacity: .6; font-size: .9rem; max-width: 30ch; margin: 18px 0 0; }
+    .footer__links { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+    .footer__links a { text-decoration: none; opacity: .85; font-size: .95rem; transition: opacity .2s, color .2s; }
+    .footer__links a:hover { opacity: 1; color: var(--dourado); }
+    .footer__wa { color: var(--dourado) !important; font-weight: 600; }
+    .footer__legal { margin-top: 46px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.12); font-size: .82rem; opacity: .6; line-height: 1.9; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="site-header">
+    <a class="logo" href="#top" aria-label="Priorizze Móveis Planejados — início">
+      <!-- Selo da marca (rosa estilizada) -->
+      <img class="emblema-white" src="priorizze-assets/priorizze-emblema-white.png" alt="" aria-hidden="true" />
+      <img class="emblema-dark" src="priorizze-assets/priorizze-emblema-dark.png" alt="" aria-hidden="true" />
+      <span class="word word-white">PRIORIZZE</span>
+      <span class="word word-dark">PRIORIZZE</span>
+    </a>
+    <a href="#sec-agendar" class="btn btn-primary nav-cta">Agendar visita</a>
+  </header>
+
+  <!-- ===================== SEÇÃO 1 — HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" role="img" aria-label="Cozinha planejada de alto padrão entregue pela Priorizze"></div>
+    <div class="hero__overlay"></div>
+    <img class="hero__emblema" src="priorizze-assets/priorizze-emblema-white.png" alt="" aria-hidden="true" />
+    <div class="wrap hero__content reveal">
+      <h1>Projetos de arquitetura, em <em>marcenaria que dura décadas.</em></h1>
+      <p class="hero__sub">Showroom em Indaial · <strong>Atendimento consultivo com arquiteta.</strong></p>
+      <a href="#sec-agendar" class="btn btn-primary">Agendar visita ao showroom <span class="arrow">→</span></a>
+    </div>
+    <div class="hero__scroll">role para descobrir</div>
+  </section>
+
+  <!-- ===================== SEÇÃO 2 — A DIFERENÇA QUE VOCÊ NÃO VÊ ===================== -->
+  <section class="section diferenciais" id="sec-diferenciais">
+    <img class="motif" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" style="left:-7%; top:8%;" />
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow"><span>A diferença que você não vê</span></p>
+        <h2 class="section-title">O mesmo MDF. <em>Outra experiência.</em></h2>
+        <p class="lead" style="margin-top:22px;">A matéria-prima é a mesma dos concorrentes. A diferença está no projeto, na ferragem, na execução — no <span class="mark">detalhe que ninguém vê</span> depois, mas que você sente todos os dias.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <!-- TROCAR: comparativo parafuso oculto vs tapa-furo -> [COMPARATIVO-1.jpg] -->
+          <div class="card__img" style="background-image:url('[COMPARATIVO-1.jpg]')"></div>
+          <div class="card__body">
+            <span class="card__num">01</span>
+            <h3>Parafuso oculto</h3>
+            <p>Suporte invisível no lugar de tapa-furos plásticos na textura. O acabamento limpo que sobrevive ao tempo.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <!-- TROCAR: comparativo ferragem premium vs comum -> [COMPARATIVO-2.jpg] -->
+          <div class="card__img" style="background-image:url('[COMPARATIVO-2.jpg]')"></div>
+          <div class="card__body">
+            <span class="card__num">02</span>
+            <h3>Ferragem premium</h3>
+            <p>Gavetas com amortecedor profissional que fecham macias por anos — não a ferragem comum que afrouxa em meses.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <!-- TROCAR: comparativo bordeamento profissional vs amador -> [COMPARATIVO-3.jpg] -->
+          <div class="card__img" style="background-image:url('[COMPARATIVO-3.jpg]')"></div>
+          <div class="card__body">
+            <span class="card__num">03</span>
+            <h3>Bordeamento invisível</h3>
+            <p>Acabamento de borda colado com precisão industrial: sem linha aparente, sem descolar, sem o detalhe amador.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 3 — QUEM ESTÁ POR TRÁS ===================== -->
+  <section class="section arquiteta">
+    <div class="wrap arquiteta__grid">
+      <div class="arquiteta__media reveal">
+        <!-- TROCAR: foto profissional da Walkiria -> [FOTO-WALKIRIA-PROFISSIONAL.jpg] -->
+        <img id="walkiria-foto" src="[FOTO-WALKIRIA-PROFISSIONAL.jpg]" alt="Walkiria, arquiteta e fundadora da Priorizze" />
+
+        <!-- VÍDEO OPCIONAL (descomente para usar — o JS troca a foto pelo vídeo automaticamente):
+        <video id="video-walkiria" controls playsinline preload="metadata" poster="[VIDEO-WALKIRIA-POSTER.jpg]">
+          <source src="[VIDEO-WALKIRIA.mp4]" type="video/mp4" />
+        </video>
+        -->
+
+        <span class="seal" aria-hidden="true"><img src="priorizze-assets/priorizze-emblema-white.png" alt="" /></span>
+      </div>
+
+      <div class="reveal">
+        <p class="eyebrow"><span>Quem está por trás</span></p>
+        <h2>Walkiria. Arquiteta. <em>Marceneira por escolha.</em></h2>
+        <p>Formada em arquitetura, escolheu não parar no projeto no papel. Decidiu controlar a execução de ponta a ponta — porque é na marcenaria que um bom projeto vive ou morre.</p>
+        <p>Sua filosofia é simples: <em>cada casa é única. Cada móvel deveria ser também.</em> Nada de catálogo industrial replicado: cada ambiente nasce de uma conversa e de um desenho seu.</p>
+        <p class="destaque">"Aqui, a gente não vende MDF. A gente entrega a experiência completa."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 4 — PROJETOS ENTREGUES ===================== -->
+  <section class="section galeria" id="sec-galeria">
+    <img class="motif" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" style="right:-8%; bottom:4%;" />
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow center"><span>Projetos entregues</span></p>
+        <h2 class="section-title">Cada ambiente é desenhado para <em>uma história.</em></h2>
+      </div>
+
+      <!--
+        TROCAR: imagens dos projetos -> [PROJETO-01.jpg] ... [PROJETO-09.jpg]
+        TROCAR: legendas (data-cap) com ambiente · cidade reais.
+        O índice data-id (1..9) é enviado no evento Project_Open do Pixel.
+      -->
+      <div class="grid-galeria" id="galeria-grid">
+        <figure class="proj reveal" tabindex="0" data-id="1" data-cap="Cozinha · Blumenau" data-full="[PROJETO-01.jpg]">
+          <img loading="lazy" src="[PROJETO-01.jpg]" alt="Cozinha planejada em Blumenau" />
+          <figcaption class="proj__cap">Cozinha · Blumenau</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="2" data-cap="Closet · Itapema" data-full="[PROJETO-02.jpg]">
+          <img loading="lazy" src="[PROJETO-02.jpg]" alt="Closet planejado em Itapema" />
+          <figcaption class="proj__cap">Closet · Itapema</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="3" data-cap="Sala · Indaial" data-full="[PROJETO-03.jpg]">
+          <img loading="lazy" src="[PROJETO-03.jpg]" alt="Sala de estar planejada em Indaial" />
+          <figcaption class="proj__cap">Sala · Indaial</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="4" data-cap="Home office · Gaspar" data-full="[PROJETO-04.jpg]">
+          <img loading="lazy" src="[PROJETO-04.jpg]" alt="Home office planejado em Gaspar" />
+          <figcaption class="proj__cap">Home office · Gaspar</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="5" data-cap="Dormitório · Timbó" data-full="[PROJETO-05.jpg]">
+          <img loading="lazy" src="[PROJETO-05.jpg]" alt="Dormitório planejado em Timbó" />
+          <figcaption class="proj__cap">Dormitório · Timbó</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="6" data-cap="Cozinha · Balneário Camboriú" data-full="[PROJETO-06.jpg]">
+          <img loading="lazy" src="[PROJETO-06.jpg]" alt="Cozinha planejada em Balneário Camboriú" />
+          <figcaption class="proj__cap">Cozinha · Balneário Camboriú</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="7" data-cap="Banheiro · Pomerode" data-full="[PROJETO-07.jpg]">
+          <img loading="lazy" src="[PROJETO-07.jpg]" alt="Banheiro planejado em Pomerode" />
+          <figcaption class="proj__cap">Banheiro · Pomerode</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="8" data-cap="Lavanderia · Brusque" data-full="[PROJETO-08.jpg]">
+          <img loading="lazy" src="[PROJETO-08.jpg]" alt="Lavanderia planejada em Brusque" />
+          <figcaption class="proj__cap">Lavanderia · Brusque</figcaption>
+        </figure>
+        <figure class="proj reveal" tabindex="0" data-id="9" data-cap="Cozinha · Itajaí" data-full="[PROJETO-09.jpg]">
+          <img loading="lazy" src="[PROJETO-09.jpg]" alt="Cozinha planejada em Itajaí" />
+          <figcaption class="proj__cap">Cozinha · Itajaí</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 5 — DEPOIMENTOS ===================== -->
+  <section class="section provas" id="sec-provas">
+    <img class="motif" src="priorizze-assets/priorizze-emblema-white.png" alt="" aria-hidden="true" style="left:-6%; top:-8%;" />
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow center"><span>Depoimentos</span></p>
+        <h2 class="section-title">O que dizem quem já <em>viveu nossos projetos.</em></h2>
+      </div>
+
+      <!-- TROCAR: depoimentos reais, fotos opcionais [DEPOIMENTO-X-FOTO.jpg], nomes, ambientes e anos -->
+      <div class="depoimentos">
+        <blockquote class="depoimento reveal">
+          <div class="aspas">&ldquo;</div>
+          <p class="depoimento__texto">Eu já tinha tido planejado industrial antes. Não tem comparação. O acabamento, o jeito que tudo fecha, o cuidado no detalhe — valeu cada centavo.</p>
+          <footer class="depoimento__quem">
+            <img loading="lazy" src="[DEPOIMENTO-1-FOTO.jpg]" alt="Cliente Priorizze" />
+            <span>
+              <span class="depoimento__nome">[Nome do cliente]</span><br>
+              <span class="depoimento__amb">Cozinha · Blumenau · 2024</span>
+            </span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="depoimento reveal">
+          <div class="aspas">&ldquo;</div>
+          <p class="depoimento__texto">A Walkiria entendeu a nossa casa antes da gente. Cada ambiente parece que sempre foi para estar ali. É outro nível de projeto.</p>
+          <footer class="depoimento__quem">
+            <img loading="lazy" src="[DEPOIMENTO-2-FOTO.jpg]" alt="Cliente Priorizze" />
+            <span>
+              <span class="depoimento__nome">[Nome do cliente]</span><br>
+              <span class="depoimento__amb">Closet · Itapema · 2023</span>
+            </span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="depoimento reveal">
+          <div class="aspas">&ldquo;</div>
+          <p class="depoimento__texto">Pesquisei muito e quase fui no mais barato. Visitar o showroom mudou tudo. Quando você toca a diferença, não tem volta.</p>
+          <footer class="depoimento__quem">
+            <img loading="lazy" src="[DEPOIMENTO-3-FOTO.jpg]" alt="Cliente Priorizze" />
+            <span>
+              <span class="depoimento__nome">[Nome do cliente]</span><br>
+              <span class="depoimento__amb">Cozinha · Indaial · 2024</span>
+            </span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 6 — O SHOWROOM ===================== -->
+  <section class="section showroom" id="sec-showroom">
+    <div class="wrap showroom__grid">
+      <div class="showroom__media reveal">
+        <!-- TROCAR: foto do showroom -> [FOTO-SHOWROOM.jpg] -->
+        <img loading="lazy" src="[FOTO-SHOWROOM.jpg]" alt="Showroom da Priorizze em Indaial" />
+      </div>
+
+      <div class="reveal">
+        <p class="eyebrow"><span>O showroom</span></p>
+        <h2>Visitar <em>muda tudo.</em></h2>
+        <p>No showroom você toca a ferragem. Vê o detalhe que a foto não captura. Conversa com quem desenha. E entende por que a Priorizze é o que é.</p>
+
+        <ul class="showroom__bullets">
+          <li>Amostras de ferragem, MDF e acabamentos para tocar</li>
+          <li>Projetos físicos montados em escala real</li>
+          <li>Conversa direta com a arquiteta</li>
+        </ul>
+
+        <div class="showroom__info">
+          <!-- TROCAR: endereço e horário reais -->
+          <strong>[ENDERECO-SHOWROOM]</strong>
+          [HORARIO-ATENDIMENTO]
+        </div>
+
+        <a href="#sec-agendar" class="btn btn-primary">Agendar visita ao showroom <span class="arrow">→</span></a>
+
+        <div class="showroom__map">
+          <!-- EMBED MAPA GOOGLE: substituir src pelo iframe real do Google Maps -->
+          <iframe
+            title="Localização do showroom Priorizze"
+            src="about:blank"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 7 — FORMULÁRIO (A CONVERSÃO) ===================== -->
+  <section class="section agendar" id="sec-agendar">
+    <img class="motif" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" style="right:-6%; bottom:-10%;" />
+    <div class="wrap agendar__grid">
+      <div class="agendar__intro reveal">
+        <p class="eyebrow"><span>Agendamento</span></p>
+        <h2>Agende sua visita <em>ao showroom.</em></h2>
+        <p>Atendimento personalizado, com hora marcada. Conte um pouco sobre seu projeto para que a gente prepare sua visita.</p>
+        <img class="emblema" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" />
+      </div>
+
+      <div class="reveal">
+        <form class="form-card" id="form-agendamento" novalidate>
+          <!-- Honeypot anti-spam: bots preenchem, humanos não veem -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Não preencha este campo</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field" id="f-nome">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required />
+            <span class="error-msg">Por favor, informe seu nome.</span>
+          </div>
+
+          <div class="field" id="f-whatsapp">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" inputmode="numeric" placeholder="(00) 00000-0000" autocomplete="tel" required />
+            <span class="error-msg">Informe um WhatsApp válido com DDD.</span>
+          </div>
+
+          <div class="field" id="f-cidade">
+            <label for="cidade">Cidade</label>
+            <select id="cidade" name="cidade" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Indaial</option>
+              <option>Blumenau</option>
+              <option>Timbó</option>
+              <option>Pomerode</option>
+              <option>Gaspar</option>
+              <option>Brusque</option>
+              <option>Itajaí</option>
+              <option>Balneário Camboriú</option>
+              <option>Itapema</option>
+              <option>Outra</option>
+            </select>
+            <span class="error-msg">Selecione sua cidade.</span>
+          </div>
+
+          <div class="field" id="f-fase">
+            <label for="fase_projeto">Em que fase está seu projeto?</label>
+            <select id="fase_projeto" name="fase_projeto" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Estou pesquisando, sem prazo definido</option>
+              <option>Vou começar nos próximos 6 meses</option>
+              <option>Estou em obra agora</option>
+              <option>Obra pronta, vou mobiliar agora</option>
+            </select>
+            <span class="error-msg">Selecione a fase do seu projeto.</span>
+          </div>
+
+          <div class="field" id="f-faixa">
+            <label for="faixa_investimento">Faixa de investimento prevista para o ambiente</label>
+            <select id="faixa_investimento" name="faixa_investimento" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Até R$ 15 mil</option>
+              <option>R$ 15 a 30 mil</option>
+              <option>R$ 30 a 60 mil</option>
+              <option>Acima de R$ 60 mil</option>
+              <option>Prefiro conversar antes</option>
+            </select>
+            <span class="error-msg">Selecione uma faixa.</span>
+          </div>
+
+          <!-- Campos ocultos de tracking (preenchidos via JS) -->
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="utm_content" value="" />
+          <input type="hidden" name="utm_term" value="" />
+          <input type="hidden" name="referrer" value="" />
+          <input type="hidden" name="landing_page_version" value="v1.0" />
+
+          <button type="submit" class="btn btn-primary">Quero agendar minha visita <span class="arrow">→</span></button>
+          <p class="microcopy">Seus dados estão seguros. Não enviamos spam.</p>
+        </form>
+
+        <!-- Mensagem de sucesso -->
+        <div class="form-card form-success" id="form-success" role="status" aria-live="polite">
+          <img class="emblema" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" />
+          <h3>Recebemos seu pedido!</h3>
+          <p>Em até 4 horas em horário comercial, entraremos em contato pelo WhatsApp para confirmar o melhor dia e horário.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO 8 — RODAPÉ ===================== -->
+  <footer class="footer">
+    <img class="motif" src="priorizze-assets/priorizze-emblema-white.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="priorizze-assets/priorizze-logo-white.png" alt="Priorizze Móveis Planejados" />
+          <p>Marcenaria de arquitetura, sob medida. O mesmo MDF, outra experiência.</p>
+        </div>
+        <nav class="footer__links">
+          <!-- TROCAR: confirmar handle do Instagram -->
+          <a href="https://instagram.com/priorizzemoveis" target="_blank" rel="noopener">Instagram · @priorizzemoveis</a>
+          <!-- TROCAR: número de WhatsApp -> 55XXXXXXXXXXX -->
+          <a class="footer__wa" id="wa-direto" href="https://wa.me/55XXXXXXXXXXX?text=Olá%20Priorizze%2C%20vim%20pelo%20site" target="_blank" rel="noopener">Prefere falar direto? Clique aqui.</a>
+        </nav>
+      </div>
+
+      <div class="footer__legal">
+        <!-- TROCAR: dados cadastrais reais -->
+        Priorizze Móveis Planejados · CNPJ [00.000.000/0001-00]<br>
+        [Endereço completo do showroom] · Indaial, Santa Catarina<br>
+        © <span id="ano"></span> Priorizze Móveis Planejados. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada do projeto">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox__cap" id="lightbox-cap"></div>
+  </div>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---------- Helper: evita disparos duplicados de eventos ---------- */
+    var fired = new Set();
+    function fireOnce(eventName, params) {
+      if (fired.has(eventName)) return;
+      fired.add(eventName);
+      if (window.fbq) fbq('trackCustom', eventName, params || {});
+    }
+
+    /* ---------- Captura UTMs da URL e injeta nos campos ocultos ---------- */
+    function captureUTMs() {
+      var params = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (key) {
+        var el = document.querySelector('input[name="' + key + '"]');
+        if (el) el.value = params.get(key) || '';
+      });
+      var ref = document.querySelector('input[name="referrer"]');
+      if (ref) ref.value = document.referrer || '';
+    }
+
+    /* ---------- Header sólido após scroll ---------- */
+    var header = document.getElementById('site-header');
+    function onScroll() {
+      if (window.scrollY > 40) header.classList.add('solid');
+      else header.classList.remove('solid');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ---------- Reveal on scroll (visual) ---------- */
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
+    /* ---------- Tracking de scroll por seção (Intersection Observer) ---------- */
+    var sectionEvents = {
+      'sec-diferenciais': 'Viewed_Diferenciais',
+      'sec-galeria':      'Viewed_Galeria',
+      'sec-provas':       'Viewed_Provas',
+      'sec-showroom':     'Viewed_Showroom'
+    };
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && sectionEvents[entry.target.id]) {
+          fireOnce(sectionEvents[entry.target.id]);
+        }
+      });
+    }, { threshold: 0.5 });
+    Object.keys(sectionEvents).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+
+    /* ---------- Vídeo da Walkiria: ativa só se tiver source válido ---------- */
+    (function setupVideo() {
+      var video = document.getElementById('video-walkiria');
+      if (!video) return;
+      var source = video.querySelector('source');
+      var src = source ? source.getAttribute('src') : '';
+      var temVideo = src && src.indexOf('[') === -1; // ignora placeholder [VIDEO-...]
+      if (!temVideo) {
+        video.style.display = 'none';
+        return;
+      }
+      var foto = document.getElementById('walkiria-foto');
+      if (foto) foto.style.display = 'none';
+      video.addEventListener('timeupdate', function () {
+        if (video.duration && video.currentTime / video.duration >= 0.5) {
+          fireOnce('Video_50%');
+        }
+      });
+    })();
+
+    /* ---------- Galeria + Lightbox (Project_Open) ---------- */
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxCap = document.getElementById('lightbox-cap');
+
+    function openLightbox(proj) {
+      var full = proj.getAttribute('data-full');
+      var cap = proj.getAttribute('data-cap') || '';
+      var id = proj.getAttribute('data-id');
+      lightboxImg.setAttribute('src', full);
+      lightboxImg.setAttribute('alt', cap);
+      lightboxCap.textContent = cap;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (window.fbq) fbq('trackCustom', 'Project_Open', { project_id: id ? Number(id) : null });
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('#galeria-grid .proj').forEach(function (proj) {
+      proj.addEventListener('click', function () { openLightbox(proj); });
+      proj.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(proj); }
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+
+    /* ---------- WhatsApp_Click (rodapé) ---------- */
+    var waBtn = document.getElementById('wa-direto');
+    if (waBtn) {
+      waBtn.addEventListener('click', function () {
+        if (window.fbq) fbq('trackCustom', 'WhatsApp_Click', {});
+      });
+    }
+
+    /* ---------- Máscara de WhatsApp (00) 00000-0000 ---------- */
+    var whats = document.getElementById('whatsapp');
+    whats.addEventListener('input', function () {
+      var v = whats.value.replace(/\D/g, '').slice(0, 11);
+      var out = v;
+      if (v.length > 0) out = '(' + v.slice(0, 2);
+      if (v.length >= 3) out += ') ' + v.slice(2, 7);
+      if (v.length >= 8) out += '-' + v.slice(7, 11);
+      whats.value = out;
+    });
+
+    /* ---------- Mapa de qualificação do formulário ---------- */
+    var VALOR_POR_FAIXA = {
+      'Até R$ 15 mil': 15000,
+      'R$ 15 a 30 mil': 30000,
+      'R$ 30 a 60 mil': 60000,
+      'Acima de R$ 60 mil': 90000,
+      'Prefiro conversar antes': 0
+    };
+    function isLeadQualificado(fase, faixa) {
+      var faseNaoPesquisa = fase !== 'Estou pesquisando, sem prazo definido';
+      var faixaQualificada = faixa !== 'Até R$ 15 mil' && faixa !== 'Prefiro conversar antes';
+      return faseNaoPesquisa && faixaQualificada;
+    }
+
+    /* ---------- Validação client-side ---------- */
+    function validar(form) {
+      var ok = true;
+      form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('invalid'); });
+      function fail(fieldId) {
+        var f = document.getElementById(fieldId);
+        if (f) f.classList.add('invalid');
+        ok = false;
+      }
+      if (!form.nome.value.trim()) fail('f-nome');
+      var digitos = form.whatsapp.value.replace(/\D/g, '');
+      if (digitos.length < 10 || digitos.length > 11) fail('f-whatsapp');
+      if (!form.cidade.value) fail('f-cidade');
+      if (!form.fase_projeto.value) fail('f-fase');
+      if (!form.faixa_investimento.value) fail('f-faixa');
+      return ok;
+    }
+
+    /* ---------- Handler do submit ---------- */
+    var form = document.getElementById('form-agendamento');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot: se preenchido, é bot -> aborta silenciosamente fingindo sucesso
+      if (form.website && form.website.value) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        return;
+      }
+
+      if (!validar(form)) {
+        var primeiroErro = form.querySelector('.field.invalid');
+        if (primeiroErro) primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      var data = new FormData(form);
+      var cidade = data.get('cidade');
+      var fase = data.get('fase_projeto');
+      var faixa = data.get('faixa_investimento');
+
+      var baseParams = {
+        cidade: cidade,
+        fase_projeto: fase,
+        faixa_investimento: faixa,
+        utm_source: data.get('utm_source'),
+        utm_medium: data.get('utm_medium'),
+        utm_campaign: data.get('utm_campaign'),
+        utm_content: data.get('utm_content'),
+        utm_term: data.get('utm_term')
+      };
+
+      // Evento Lead (sempre) — evento PADRÃO do Pixel
+      if (window.fbq) fbq('track', 'Lead', baseParams);
+
+      // Lead_Qualificado OU Lead_Topo (mutuamente exclusivos) — eventos CUSTOM
+      if (isLeadQualificado(fase, faixa)) {
+        if (window.fbq) fbq('trackCustom', 'Lead_Qualificado', Object.assign({}, baseParams, {
+          value: VALOR_POR_FAIXA[faixa],
+          currency: 'BRL'
+        }));
+      } else {
+        if (window.fbq) fbq('trackCustom', 'Lead_Topo', baseParams);
+      }
+
+      // ---- Envio ao backend (PLACEHOLDER — adaptar conforme a stack) ----
+      // fetch('/api/lead', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(Object.fromEntries(data))
+      // });
+
+      // Mostra mensagem de sucesso
+      form.style.display = 'none';
+      var ok = document.getElementById('form-success');
+      ok.style.display = 'block';
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    /* ---------- Ano dinâmico no rodapé ---------- */
+    try { document.getElementById('ano').textContent = new Date().getFullYear(); } catch (e) {}
+
+    /* ---------- Inicializa ---------- */
+    captureUTMs();
+  })();
+  </script>
+
+</body>
+</html>
