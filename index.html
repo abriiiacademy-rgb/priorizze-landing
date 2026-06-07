@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet" />
 
   <!-- ===================== Meta Pixel ===================== -->
-  <!-- TROCAR: [META_PIXEL_ID] pelo ID real do pixel (em 2 lugares: init e noscript) -->
+  <!-- Pixel configurado: PIXEL PRIORIZZE (ID 772470372244472) -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -36,10 +36,10 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '[META_PIXEL_ID]');
+  fbq('init', '772470372244472');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[META_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=772470372244472&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
@@ -901,7 +901,7 @@
 
       // ---- Envio do lead para a planilha Google (Apps Script Web App) ----
       // TROCAR: cole aqui a URL do Web App do Apps Script (instruções no arquivo priorizze-apps-script.gs)
-      var SHEETS_URL = '[GOOGLE_SHEETS_WEB_APP_URL]';
+      var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzyLspvO92DJ65xJG7A2brvbGPc-PY5AAPFJbQq3En0h0EdaqJjIb_cZD0owE33ahVudw/exec';
       var qualificado = isLeadQualificado(fase, faixa);
       var payload = Object.assign({}, Object.fromEntries(data), {
         qualificado: qualificado ? 'sim' : 'nao',
