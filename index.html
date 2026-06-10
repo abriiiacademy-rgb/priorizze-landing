@@ -316,6 +316,17 @@
     .footer__links a:hover { opacity: 1; color: var(--dourado); }
     .footer__wa { color: var(--dourado) !important; font-weight: 600; }
     .footer__legal { margin-top: 46px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.12); font-size: .82rem; opacity: .6; line-height: 1.9; }
+  
+    /* Avaliações Google */
+    .google-rating { display:inline-flex; align-items:center; gap:10px; margin-top:18px; text-decoration:none;
+      background: rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); padding:8px 18px; border-radius:50px; transition:background .2s; }
+    .google-rating:hover { background: rgba(255,255,255,.24); }
+    .google-rating .gr-score { font-family:var(--serif); font-weight:700; font-size:1.3rem; color:#fff; }
+    .google-rating .gr-stars { color:#FBBC04; letter-spacing:2px; font-size:1rem; }
+    .google-rating .gr-label { color:#fff; font-size:.86rem; opacity:.95; }
+    .depoimento__info { display:flex; flex-direction:column; }
+    .depoimento__stars { color:#FBBC04; letter-spacing:2px; font-size:1rem; margin-left:auto; }
+
   </style>
 </head>
 
@@ -478,43 +489,47 @@
       <div class="head reveal">
         <p class="eyebrow center"><span>Depoimentos</span></p>
         <h2 class="section-title">O que dizem quem já <em>viveu nossos projetos.</em></h2>
+        <a class="google-rating reveal" href="https://www.google.com/maps?cid=4054585847445693518" target="_blank" rel="noopener" aria-label="5,0 estrelas, 10 avaliações no Google">
+          <span class="gr-score">5,0</span>
+          <span class="gr-stars">★★★★★</span>
+          <span class="gr-label">10 avaliações no Google</span>
+        </a>
       </div>
 
-      <!-- TROCAR: depoimentos reais, fotos opcionais [DEPOIMENTO-X-FOTO.jpg], nomes, ambientes e anos -->
       <div class="depoimentos">
         <blockquote class="depoimento reveal">
           <div class="aspas">&ldquo;</div>
-          <p class="depoimento__texto">Eu já tinha tido planejado industrial antes. Não tem comparação. O acabamento, o jeito que tudo fecha, o cuidado no detalhe — valeu cada centavo.</p>
+          <p class="depoimento__texto">A equipe da Priorizze realizou o apartamento completo com muito cuidado, qualidade e atenção aos detalhes. Desde o início, ótimo atendimento e comprometimento em cada etapa. O resultado ficou exatamente como imaginávamos: um ambiente lindo, funcional e acolhedor. Recomendamos de olhos fechados!</p>
           <footer class="depoimento__quem">
-            <img loading="lazy" src="[DEPOIMENTO-1-FOTO.jpg]" alt="Cliente Priorizze" />
-            <span>
-              <span class="depoimento__nome">[Nome do cliente]</span><br>
-              <span class="depoimento__amb">Lavabo planejado · 2024</span>
+            <span class="depoimento__info">
+              <span class="depoimento__nome">Eliane Prim de Souza</span>
+              <span class="depoimento__amb">Avaliação no Google · 2026</span>
             </span>
+            <span class="depoimento__stars" aria-label="5 de 5 no Google">★★★★★</span>
           </footer>
         </blockquote>
 
         <blockquote class="depoimento reveal">
           <div class="aspas">&ldquo;</div>
-          <p class="depoimento__texto">A Jeanne entendeu a nossa casa antes da gente. Cada ambiente parece que sempre foi para estar ali. É outro nível de projeto.</p>
+          <p class="depoimento__texto">Elegância, qualidade e beleza em um só lugar.</p>
           <footer class="depoimento__quem">
-            <img loading="lazy" src="[DEPOIMENTO-2-FOTO.jpg]" alt="Cliente Priorizze" />
-            <span>
-              <span class="depoimento__nome">[Nome do cliente]</span><br>
-              <span class="depoimento__amb">Cozinha planejada · 2023</span>
+            <span class="depoimento__info">
+              <span class="depoimento__nome">Thyrza Saiamme</span>
+              <span class="depoimento__amb">Avaliação no Google · 2026</span>
             </span>
+            <span class="depoimento__stars" aria-label="5 de 5 no Google">★★★★★</span>
           </footer>
         </blockquote>
 
         <blockquote class="depoimento reveal">
           <div class="aspas">&ldquo;</div>
-          <p class="depoimento__texto">Pesquisei muito e quase fui no mais barato. Visitar o showroom mudou tudo. Quando você toca a diferença, não tem volta.</p>
+          <p class="depoimento__texto">Móveis de excelente qualidade e atendimento impecável. Estão de parabéns!</p>
           <footer class="depoimento__quem">
-            <img loading="lazy" src="[DEPOIMENTO-3-FOTO.jpg]" alt="Cliente Priorizze" />
-            <span>
-              <span class="depoimento__nome">[Nome do cliente]</span><br>
-              <span class="depoimento__amb">Cozinha · Indaial · 2024</span>
+            <span class="depoimento__info">
+              <span class="depoimento__nome">Larissa de Souza</span>
+              <span class="depoimento__amb">Avaliação no Google · 2026</span>
             </span>
+            <span class="depoimento__stars" aria-label="5 de 5 no Google">★★★★★</span>
           </footer>
         </blockquote>
       </div>
