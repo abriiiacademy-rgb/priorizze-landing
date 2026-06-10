@@ -157,8 +157,8 @@
     @media (max-width: 768px){ .hero { min-height: 88vh; } }
     .hero__bg {
       position: absolute; inset: 0; z-index: 0;
-      /* TROCAR: imagem de fundo do hero -> [IMAGEM-HERO-AMBIENTE-PREMIUM.jpg] */
-      background: url('[IMAGEM-HERO-AMBIENTE-PREMIUM.jpg]') center/cover no-repeat, #2a2320;
+      /* TROCAR: imagem de fundo do hero -> priorizze-assets/fotos/hero.jpg */
+      background: url('priorizze-assets/fotos/hero.jpg') center/cover no-repeat, #2a2320;
       transform: scale(1.04);
     }
     .hero__overlay {
@@ -261,7 +261,7 @@
     .showroom__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
     @media (max-width: 880px){ .showroom__grid { grid-template-columns: 1fr; } }
     .showroom__media { position: relative; }
-    .showroom__media img { width: 100%; border-radius: 18px; aspect-ratio: 4/3; object-fit: cover; box-shadow: var(--shadow); background: var(--bege); }
+    .showroom__media img { width: 100%; border-radius: 18px; aspect-ratio: 3/4; object-fit: cover; box-shadow: var(--shadow); background: var(--bege); }
     .showroom__media::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--dourado); border-radius: 18px; z-index: -1; }
     .showroom h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 24px; font-weight: 500; }
     .showroom h2 em { color: var(--terracota); font-weight: 600; }
@@ -358,8 +358,8 @@
 
       <div class="cards">
         <article class="card reveal">
-          <!-- TROCAR: comparativo parafuso oculto vs tapa-furo -> [COMPARATIVO-1.jpg] -->
-          <div class="card__img" style="background-image:url('[COMPARATIVO-1.jpg]')"></div>
+          <!-- TROCAR: comparativo parafuso oculto vs tapa-furo -> priorizze-assets/fotos/comparativo-1.jpg -->
+          <div class="card__img" style="background-image:url('priorizze-assets/fotos/comparativo-1.jpg')"></div>
           <div class="card__body">
             <span class="card__num">01</span>
             <h3>Parafuso oculto</h3>
@@ -368,8 +368,8 @@
         </article>
 
         <article class="card reveal">
-          <!-- TROCAR: comparativo ferragem premium vs comum -> [COMPARATIVO-2.jpg] -->
-          <div class="card__img" style="background-image:url('[COMPARATIVO-2.jpg]')"></div>
+          <!-- TROCAR: comparativo ferragem premium vs comum -> priorizze-assets/fotos/comparativo-2.jpg -->
+          <div class="card__img" style="background-image:url('priorizze-assets/fotos/comparativo-2.jpg')"></div>
           <div class="card__body">
             <span class="card__num">02</span>
             <h3>Ferragem premium</h3>
@@ -378,8 +378,8 @@
         </article>
 
         <article class="card reveal">
-          <!-- TROCAR: comparativo bordeamento profissional vs amador -> [COMPARATIVO-3.jpg] -->
-          <div class="card__img" style="background-image:url('[COMPARATIVO-3.jpg]')"></div>
+          <!-- TROCAR: comparativo bordeamento profissional vs amador -> priorizze-assets/fotos/comparativo-3.jpg -->
+          <div class="card__img" style="background-image:url('priorizze-assets/fotos/comparativo-3.jpg')"></div>
           <div class="card__body">
             <span class="card__num">03</span>
             <h3>Bordeamento invisível</h3>
@@ -394,12 +394,12 @@
   <section class="section arquiteta">
     <div class="wrap arquiteta__grid">
       <div class="arquiteta__media reveal">
-        <!-- TROCAR: foto profissional da Walkiria -> [FOTO-WALKIRIA-PROFISSIONAL.jpg] -->
-        <img id="walkiria-foto" src="[FOTO-WALKIRIA-PROFISSIONAL.jpg]" alt="Walkiria, arquiteta e fundadora da Priorizze" />
+        <!-- TROCAR: foto profissional da Jeanne -> priorizze-assets/fotos/walkiria.jpg -->
+        <img id="walkiria-foto" src="priorizze-assets/fotos/walkiria.jpg" alt="Jeanne, arquiteta e fundadora da Priorizze" />
 
         <!-- VÍDEO OPCIONAL (descomente para usar — o JS troca a foto pelo vídeo automaticamente):
-        <video id="video-walkiria" controls playsinline preload="metadata" poster="[VIDEO-WALKIRIA-POSTER.jpg]">
-          <source src="[VIDEO-WALKIRIA.mp4]" type="video/mp4" />
+        <video id="video-walkiria" controls playsinline preload="metadata" poster="[VIDEO-JEANNE-POSTER.jpg]">
+          <source src="[VIDEO-JEANNE.mp4]" type="video/mp4" />
         </video>
         -->
 
@@ -408,7 +408,7 @@
 
       <div class="reveal">
         <p class="eyebrow"><span>Quem está por trás</span></p>
-        <h2>Walkiria. Arquiteta. <em>Marceneira por escolha.</em></h2>
+        <h2>Jeanne. Arquiteta. <em>Marceneira por escolha.</em></h2>
         <p>Formada em arquitetura, escolheu não parar no projeto no papel. Decidiu controlar a execução de ponta a ponta — porque é na marcenaria que um bom projeto vive ou morre.</p>
         <p>Sua filosofia é simples: <em>cada casa é única. Cada móvel deveria ser também.</em> Nada de catálogo industrial replicado: cada ambiente nasce de uma conversa e de um desenho seu.</p>
         <p class="destaque">"Aqui, a gente não vende MDF. A gente entrega a experiência completa."</p>
@@ -426,46 +426,46 @@
       </div>
 
       <!--
-        TROCAR: imagens dos projetos -> [PROJETO-01.jpg] ... [PROJETO-09.jpg]
+        TROCAR: imagens dos projetos -> priorizze-assets/fotos/projeto-01.jpg ... priorizze-assets/fotos/projeto-09.jpg
         TROCAR: legendas (data-cap) com ambiente · cidade reais.
         O índice data-id (1..9) é enviado no evento Project_Open do Pixel.
       -->
       <div class="grid-galeria" id="galeria-grid">
-        <figure class="proj reveal" tabindex="0" data-id="1" data-cap="Cozinha · Blumenau" data-full="[PROJETO-01.jpg]">
-          <img loading="lazy" src="[PROJETO-01.jpg]" alt="Cozinha planejada em Blumenau" />
-          <figcaption class="proj__cap">Cozinha · Blumenau</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="1" data-cap="Lavabo planejado" data-full="priorizze-assets/fotos/projeto-01.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-01.jpg" alt="Lavabo planejado pela Priorizze" />
+          <figcaption class="proj__cap">Lavabo planejado</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="2" data-cap="Closet · Itapema" data-full="[PROJETO-02.jpg]">
-          <img loading="lazy" src="[PROJETO-02.jpg]" alt="Closet planejado em Itapema" />
-          <figcaption class="proj__cap">Closet · Itapema</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="2" data-cap="Cozinha planejada" data-full="priorizze-assets/fotos/projeto-02.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-02.jpg" alt="Cozinha planejada pela Priorizze" />
+          <figcaption class="proj__cap">Cozinha planejada</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="3" data-cap="Sala · Indaial" data-full="[PROJETO-03.jpg]">
-          <img loading="lazy" src="[PROJETO-03.jpg]" alt="Sala de estar planejada em Indaial" />
-          <figcaption class="proj__cap">Sala · Indaial</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="3" data-cap="Cozinha sob medida" data-full="priorizze-assets/fotos/projeto-03.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-03.jpg" alt="Cozinha sob medida pela Priorizze" />
+          <figcaption class="proj__cap">Cozinha sob medida</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="4" data-cap="Home office · Gaspar" data-full="[PROJETO-04.jpg]">
-          <img loading="lazy" src="[PROJETO-04.jpg]" alt="Home office planejado em Gaspar" />
-          <figcaption class="proj__cap">Home office · Gaspar</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="4" data-cap="Adega climatizada" data-full="priorizze-assets/fotos/projeto-04.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-04.jpg" alt="Adega climatizada pela Priorizze" />
+          <figcaption class="proj__cap">Adega climatizada</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="5" data-cap="Dormitório · Timbó" data-full="[PROJETO-05.jpg]">
-          <img loading="lazy" src="[PROJETO-05.jpg]" alt="Dormitório planejado em Timbó" />
-          <figcaption class="proj__cap">Dormitório · Timbó</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="5" data-cap="Lavabo ripado" data-full="priorizze-assets/fotos/projeto-05.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-05.jpg" alt="Lavabo ripado pela Priorizze" />
+          <figcaption class="proj__cap">Lavabo ripado</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="6" data-cap="Cozinha · Balneário Camboriú" data-full="[PROJETO-06.jpg]">
-          <img loading="lazy" src="[PROJETO-06.jpg]" alt="Cozinha planejada em Balneário Camboriú" />
-          <figcaption class="proj__cap">Cozinha · Balneário Camboriú</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="6" data-cap="Lavabo sob medida" data-full="priorizze-assets/fotos/projeto-06.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-06.jpg" alt="Lavabo sob medida pela Priorizze" />
+          <figcaption class="proj__cap">Lavabo sob medida</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="7" data-cap="Banheiro · Pomerode" data-full="[PROJETO-07.jpg]">
-          <img loading="lazy" src="[PROJETO-07.jpg]" alt="Banheiro planejado em Pomerode" />
-          <figcaption class="proj__cap">Banheiro · Pomerode</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="7" data-cap="Home office" data-full="priorizze-assets/fotos/projeto-07.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-07.jpg" alt="Home office planejado pela Priorizze" />
+          <figcaption class="proj__cap">Home office</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="8" data-cap="Lavanderia · Brusque" data-full="[PROJETO-08.jpg]">
-          <img loading="lazy" src="[PROJETO-08.jpg]" alt="Lavanderia planejada em Brusque" />
-          <figcaption class="proj__cap">Lavanderia · Brusque</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="8" data-cap="Espaço de beleza" data-full="priorizze-assets/fotos/projeto-08.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-08.jpg" alt="Espaço de beleza pela Priorizze" />
+          <figcaption class="proj__cap">Espaço de beleza</figcaption>
         </figure>
-        <figure class="proj reveal" tabindex="0" data-id="9" data-cap="Cozinha · Itajaí" data-full="[PROJETO-09.jpg]">
-          <img loading="lazy" src="[PROJETO-09.jpg]" alt="Cozinha planejada em Itajaí" />
-          <figcaption class="proj__cap">Cozinha · Itajaí</figcaption>
+        <figure class="proj reveal" tabindex="0" data-id="9" data-cap="Lounge" data-full="priorizze-assets/fotos/projeto-09.jpg">
+          <img loading="lazy" src="priorizze-assets/fotos/projeto-09.jpg" alt="Lounge planejado pela Priorizze" />
+          <figcaption class="proj__cap">Lounge</figcaption>
         </figure>
       </div>
     </div>
@@ -489,19 +489,19 @@
             <img loading="lazy" src="[DEPOIMENTO-1-FOTO.jpg]" alt="Cliente Priorizze" />
             <span>
               <span class="depoimento__nome">[Nome do cliente]</span><br>
-              <span class="depoimento__amb">Cozinha · Blumenau · 2024</span>
+              <span class="depoimento__amb">Lavabo planejado · 2024</span>
             </span>
           </footer>
         </blockquote>
 
         <blockquote class="depoimento reveal">
           <div class="aspas">&ldquo;</div>
-          <p class="depoimento__texto">A Walkiria entendeu a nossa casa antes da gente. Cada ambiente parece que sempre foi para estar ali. É outro nível de projeto.</p>
+          <p class="depoimento__texto">A Jeanne entendeu a nossa casa antes da gente. Cada ambiente parece que sempre foi para estar ali. É outro nível de projeto.</p>
           <footer class="depoimento__quem">
             <img loading="lazy" src="[DEPOIMENTO-2-FOTO.jpg]" alt="Cliente Priorizze" />
             <span>
               <span class="depoimento__nome">[Nome do cliente]</span><br>
-              <span class="depoimento__amb">Closet · Itapema · 2023</span>
+              <span class="depoimento__amb">Cozinha planejada · 2023</span>
             </span>
           </footer>
         </blockquote>
@@ -525,8 +525,8 @@
   <section class="section showroom" id="sec-showroom">
     <div class="wrap showroom__grid">
       <div class="showroom__media reveal">
-        <!-- TROCAR: foto do showroom -> [FOTO-SHOWROOM.jpg] -->
-        <img loading="lazy" src="[FOTO-SHOWROOM.jpg]" alt="Showroom da Priorizze em Indaial" />
+        <!-- TROCAR: foto do showroom -> priorizze-assets/fotos/showroom.jpg -->
+        <img loading="lazy" src="priorizze-assets/fotos/showroom.jpg" alt="Showroom da Priorizze em Indaial" />
       </div>
 
       <div class="reveal">
@@ -751,7 +751,7 @@
       if (el) sectionObserver.observe(el);
     });
 
-    /* ---------- Vídeo da Walkiria: ativa só se tiver source válido ---------- */
+    /* ---------- Vídeo da Jeanne: ativa só se tiver source válido ---------- */
     (function setupVideo() {
       var video = document.getElementById('video-walkiria');
       if (!video) return;
