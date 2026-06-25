@@ -10,15 +10,27 @@
   <meta name="theme-color" content="#C45822" />
   <link rel="icon" type="image/png" href="priorizze-assets/favicon.png" />
 
+  <link rel="canonical" href="https://lp.priorizzemoveis.com.br/" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Priorizze Móveis Planejados" />
+  <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Priorizze Móveis Planejados · Marcenaria de arquitetura" />
   <meta property="og:description" content="O mesmo MDF, outra experiência. Projeto de arquitetura em marcenaria que dura décadas. Showroom em Indaial, SC." />
-  <!-- TROCAR: URL absoluta da imagem de compartilhamento (1200x630) -->
-  <meta property="og:image" content="[OG-IMAGE-1200x630.jpg]" />
-  <!-- TROCAR: URL final do site -->
-  <meta property="og:url" content="https://www.priorizze.com.br/" />
+  <meta property="og:url" content="https://lp.priorizzemoveis.com.br/" />
+  <meta property="og:image" content="https://lp.priorizzemoveis.com.br/priorizze-assets/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://lp.priorizzemoveis.com.br/priorizze-assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Priorizze Móveis Planejados — O mesmo MDF, outra experiência" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Priorizze Móveis Planejados · Marcenaria de arquitetura" />
+  <meta name="twitter:description" content="O mesmo MDF, outra experiência. Showroom em Indaial, SC." />
+  <meta name="twitter:image" content="https://lp.priorizzemoveis.com.br/priorizze-assets/og-image.jpg" />
 
   <!-- ===================== Fontes ===================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -453,7 +465,7 @@
           <input type="hidden" name="utm_content" value="" />
           <input type="hidden" name="utm_term" value="" />
           <input type="hidden" name="referrer" value="" />
-          <input type="hidden" name="landing_page_version" value="v2.0" />
+          <input type="hidden" name="landing_page_version" value="v2.1" />
 
           <button type="submit" class="btn btn-primary">Quero agendar minha visita <span class="arrow">→</span></button>
           <p class="microcopy">Seus dados estão seguros. Não enviamos spam.</p>
@@ -783,17 +795,22 @@
       'sec-provas':       'Viewed_Provas',
       'sec-showroom':     'Viewed_Showroom'
     };
-    var sectionObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && sectionEvents[entry.target.id]) {
-          fireOnce(sectionEvents[entry.target.id]);
-        }
+    // Dispara cada Viewed_* (1x por sessão) quando o TOPO da seção cruza ~55% da
+    // altura da tela. Detecção por POSIÇÃO de scroll (não IntersectionObserver):
+    // funciona em qualquer velocidade — inclusive scroll rápido/saltos no mobile —
+    // e sempre na ordem real (Diferenciais -> Galeria -> Provas -> Showroom).
+    var ordemSecoes = ['sec-diferenciais', 'sec-galeria', 'sec-provas', 'sec-showroom'];
+    function checkSecoesVistas() {
+      var linha = window.innerHeight * 0.55;
+      ordemSecoes.forEach(function (id) {
+        var ev = sectionEvents[id];
+        if (fired.has(ev)) return;
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= linha) fireOnce(ev);
       });
-    }, { threshold: 0.5 });
-    Object.keys(sectionEvents).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) sectionObserver.observe(el);
-    });
+    }
+    window.addEventListener('scroll', checkSecoesVistas, { passive: true });
+    checkSecoesVistas();
 
     /* ---------- Vídeo da Jeanne: ativa só se tiver source válido ---------- */
     (function setupVideo() {
@@ -878,6 +895,58 @@
       return faseNaoPesquisa && faixaQualificada;
     }
 
+    /* ---------- Advanced Matching: PII normalizada + hashada em SHA-256 ---------- */
+    function sha256Hex(str) {
+      if (!str) return Promise.resolve(undefined);
+      try {
+        var bytes = new TextEncoder().encode(str);
+        return crypto.subtle.digest('SHA-256', bytes).then(function (buf) {
+          return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+            return ('0' + b.toString(16)).slice(-2);
+          }).join('');
+        });
+      } catch (e) { return Promise.resolve(undefined); }
+    }
+
+    // Dispara Lead (sempre) + Lead_Qualificado/Lead_Topo, com Advanced Matching hashado.
+    function dispararEventosPixel(baseParams, nome, whats, cidade, qualificado, faixa) {
+      if (!window.fbq) return;
+      function fire() {
+        fbq('track', 'Lead', baseParams);                                  // evento PADRÃO
+        if (qualificado) {
+          fbq('trackCustom', 'Lead_Qualificado', Object.assign({}, baseParams, {
+            value: VALOR_POR_FAIXA[faixa], currency: 'BRL'
+          }));
+        } else {
+          fbq('trackCustom', 'Lead_Topo', baseParams);
+        }
+      }
+      // Normaliza (lowercase/trim); telefone só dígitos com DDI 55; país fixo 'br'
+      var partes = (nome || '').trim().toLowerCase().split(/\s+/);
+      var fn = partes[0] || '';
+      var ln = partes.length > 1 ? partes.slice(1).join(' ') : '';
+      var ph = (whats || '').replace(/\D/g, '');
+      if (ph && ph.length <= 11) ph = '55' + ph;
+      var ct = (cidade || '').toLowerCase().trim();
+
+      if (window.crypto && crypto.subtle) {
+        Promise.all([sha256Hex(ph), sha256Hex(fn), sha256Hex(ln), sha256Hex(ct), sha256Hex('br')])
+          .then(function (h) {
+            var am = {};
+            if (h[0]) am.ph = h[0];
+            if (h[1]) am.fn = h[1];
+            if (h[2]) am.ln = h[2];
+            if (h[3]) am.ct = h[3];
+            if (h[4]) am.country = h[4];
+            try { fbq('init', '772470372244472', am); } catch (e) {}   // Advanced Matching
+            fire();
+          })
+          .catch(fire);
+      } else {
+        fire(); // fallback: sem SHA-256 disponível, dispara sem PII
+      }
+    }
+
     /* ---------- Validação client-side ---------- */
     function validar(form) {
       var ok = true;
@@ -918,6 +987,9 @@
       var cidade = data.get('cidade');
       var fase = data.get('fase_projeto');
       var faixa = data.get('faixa_investimento');
+      var nomeVal = data.get('nome');
+      var whatsVal = data.get('whatsapp');
+      var qualificado = isLeadQualificado(fase, faixa);
 
       var baseParams = {
         cidade: cidade,
@@ -930,23 +1002,11 @@
         utm_term: data.get('utm_term')
       };
 
-      // Evento Lead (sempre) — evento PADRÃO do Pixel
-      if (window.fbq) fbq('track', 'Lead', baseParams);
-
-      // Lead_Qualificado OU Lead_Topo (mutuamente exclusivos) — eventos CUSTOM
-      if (isLeadQualificado(fase, faixa)) {
-        if (window.fbq) fbq('trackCustom', 'Lead_Qualificado', Object.assign({}, baseParams, {
-          value: VALOR_POR_FAIXA[faixa],
-          currency: 'BRL'
-        }));
-      } else {
-        if (window.fbq) fbq('trackCustom', 'Lead_Topo', baseParams);
-      }
+      // Dispara Lead (sempre) + Lead_Qualificado/Lead_Topo, com Advanced Matching (PII hashada SHA-256)
+      dispararEventosPixel(baseParams, nomeVal, whatsVal, cidade, qualificado, faixa);
 
       // ---- Envio do lead para a planilha Google (Apps Script Web App) ----
-      // TROCAR: cole aqui a URL do Web App do Apps Script (instruções no arquivo priorizze-apps-script.gs)
       var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzyLspvO92DJ65xJG7A2brvbGPc-PY5AAPFJbQq3En0h0EdaqJjIb_cZD0owE33ahVudw/exec';
-      var qualificado = isLeadQualificado(fase, faixa);
       var payload = Object.assign({}, Object.fromEntries(data), {
         qualificado: qualificado ? 'sim' : 'nao',
         valor: qualificado ? VALOR_POR_FAIXA[faixa] : ''
