@@ -149,28 +149,35 @@
     .header:not(.solid) .nav-cta:hover { background: rgba(255,255,255,.24); }
     @media (max-width: 640px){ .header .nav-cta { display: none; } .logo img { height: 30px; } }
 
-    /* ===================== Hero ===================== */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; }
-    @media (max-width: 768px){ .hero { min-height: 88vh; } }
-    .hero__bg {
-      position: absolute; inset: 0; z-index: 0;
-      /* TROCAR: imagem de fundo do hero -> priorizze-assets/fotos/hero.jpg */
-      background: url('priorizze-assets/fotos/hero.jpg') center/cover no-repeat, #2a2320;
-      transform: scale(1.04);
-    }
+    /* ===================== Hero + Formulário ===================== */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; color: #fff; overflow: hidden; padding: 92px 0 40px; }
+    /* Mobile: fundo gradiente (sem imagem pesada) -> LCP instantâneo */
+    .hero__bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(140deg, #2a2320 0%, #1b1411 55%, #2a1c13 100%); }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
       background:
-        radial-gradient(120% 80% at 80% 0%, rgba(196,88,34,.18) 0%, transparent 55%),
-        linear-gradient(180deg, rgba(26,22,20,.34) 0%, rgba(26,22,20,.12) 38%, rgba(20,16,14,.82) 100%);
+        radial-gradient(120% 90% at 80% 0%, rgba(196,88,34,.22) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(20,16,14,.45) 0%, rgba(20,16,14,.35) 45%, rgba(20,16,14,.6) 100%);
     }
-    .hero__emblema { position: absolute; right: -3%; bottom: -4%; width: clamp(320px, 36vw, 600px); opacity: .10; z-index: 1; }
-    .hero__content { position: relative; z-index: 2; padding-bottom: clamp(64px, 11vh, 130px); padding-top: 130px; }
-    .hero h1 { font-size: clamp(2.6rem, 6.2vw, 5rem); font-weight: 500; max-width: 17ch; text-shadow: 0 2px 40px rgba(0,0,0,.4); }
-    .hero h1 em { color: var(--dourado); font-weight: 600; }
-    .hero__sub { font-size: clamp(1.02rem, 2vw, 1.32rem); margin: 26px 0 38px; font-weight: 400; opacity: .96; max-width: 42ch; line-height: 1.6; }
-    .hero__sub strong { font-weight: 600; }
-    .hero__scroll { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 2; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; opacity: .7; }
+    @media (min-width: 901px){
+      .hero__bg { background: url('priorizze-assets/fotos/hero.jpg') center/cover no-repeat, #2a2320; }
+      .hero__overlay { background:
+        radial-gradient(110% 90% at 82% 10%, rgba(196,88,34,.16) 0%, transparent 48%),
+        linear-gradient(90deg, rgba(20,16,14,.82) 0%, rgba(20,16,14,.5) 42%, rgba(20,16,14,.12) 100%); }
+    }
+    .hero__grid { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; }
+    @media (min-width: 901px){ .hero__grid { grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 60px); } }
+    .hero__left { z-index: 2; }
+    .hero h1 { font-size: clamp(2rem, 7.4vw, 3.6rem); font-weight: 600; max-width: 15ch; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+    .hero h1 em { color: var(--dourado); }
+    .hero__sub { font-size: clamp(1rem, 2.3vw, 1.2rem); margin: 14px 0 0; font-weight: 400; opacity: .95; max-width: 40ch; line-height: 1.5; }
+    .hero__badges { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 20px 0 0; }
+    .hero__badges li { font-size: .76rem; font-weight: 600; color: #fff; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.28); padding: 7px 13px; border-radius: 50px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    .hero__badges li::before { content: "✓"; color: var(--dourado); margin-right: 6px; font-weight: 700; }
+    @media (max-width: 540px){ .hero__badges { display: none; } }
+    .hero__form { z-index: 2; }
+    .form-card__title { font-size: clamp(1.35rem, 4.4vw, 1.7rem); font-weight: 600; margin-bottom: 4px; }
+    .form-card__sub { font-size: .92rem; color: var(--grafite); margin: 0 0 16px; line-height: 1.45; }
 
     /* ===================== Seção 2 — Diferenciais ===================== */
     .diferenciais { background: var(--fundo); }
@@ -324,6 +331,25 @@
     .depoimento__info { display:flex; flex-direction:column; }
     .depoimento__stars { color:#FBBC04; letter-spacing:2px; font-size:1rem; margin-left:auto; }
 
+    /* ===================== CTAs âncora (retorno ao formulário do Hero) ===================== */
+    #formulario { scroll-margin-top: 84px; }
+    .cta-band { text-align: center; margin-top: clamp(40px, 6vw, 60px); }
+    .btn-light { background: var(--fundo); color: var(--terracota); box-shadow: 0 14px 30px -12px rgba(0,0,0,.35); }
+    .btn-light:hover { background: #fff; color: var(--terracota-dark); transform: translateY(-3px); }
+    .cta-final { background: var(--bege-soft); text-align: center; padding: clamp(54px, 8vw, 88px) 0; }
+    .cta-final h2 { font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 500; margin-bottom: 24px; }
+    .cta-final h2 em { color: var(--terracota); font-weight: 600; }
+    .form-success__cta { margin-top: 22px; font-size: .9rem; padding: 13px 26px; }
+
+    /* Formulário compacto no mobile (cabe na primeira tela) */
+    @media (max-width: 900px){
+      .form-card { padding: 20px 18px 24px; border-radius: 16px; }
+      .field { margin-bottom: 12px; }
+      .field label { margin-bottom: 5px; font-size: .72rem; }
+      .field input, .field select { padding: 12px 14px; font-size: .98rem; }
+      .form-card .btn-primary { padding: 15px 30px; font-size: 1rem; }
+      .microcopy { margin-top: 12px; }
+    }
   </style>
 </head>
 
@@ -336,20 +362,112 @@
       <img class="logo-full logo-light" src="priorizze-assets/logo-horizontal-white.png" alt="Priorizze Móveis" />
       <img class="logo-full logo-dark" src="priorizze-assets/logo-horizontal-dark.png" alt="Priorizze Móveis" />
     </a>
-    <a href="#sec-agendar" class="btn btn-primary nav-cta">Agendar visita</a>
+    <a href="#formulario" class="btn btn-primary nav-cta">Agendar visita</a>
   </header>
 
-  <!-- ===================== SEÇÃO 1 — HERO ===================== -->
+  <!-- ===================== SEÇÃO 1 — HERO + FORMULÁRIO ===================== -->
   <section class="hero" id="top">
-    <div class="hero__bg" role="img" aria-label="Cozinha planejada de alto padrão entregue pela Priorizze"></div>
+    <div class="hero__bg" role="img" aria-label="Ambiente planejado de alto padrão entregue pela Priorizze"></div>
     <div class="hero__overlay"></div>
-    <img class="hero__emblema" src="priorizze-assets/priorizze-emblema-white.png" alt="" aria-hidden="true" />
-    <div class="wrap hero__content reveal">
-      <h1>Projetos de arquitetura, em <em>marcenaria que dura décadas.</em></h1>
-      <p class="hero__sub">Showroom em Indaial · <strong>Atendimento consultivo com arquiteta.</strong></p>
-      <a href="#sec-agendar" class="btn btn-primary">Agendar visita ao showroom <span class="arrow">→</span></a>
+    <div class="wrap hero__grid">
+      <div class="hero__left reveal">
+        <h1>O mesmo MDF. <em>Outra experiência.</em></h1>
+        <p class="hero__sub">Marcenaria de arquitetura em Indaial. Projeto autoral, fábrica própria e acabamento que dura décadas.</p>
+        <ul class="hero__badges">
+          <li>Arquiteta-dona</li>
+          <li>Fábrica própria</li>
+          <li>Acabamento durável</li>
+        </ul>
+      </div>
+
+      <div class="hero__form reveal" id="formulario">
+        <form class="form-card" id="form-agendamento" novalidate>
+          <h2 class="form-card__title">Agende sua visita ao showroom</h2>
+          <p class="form-card__sub">Apresentamos seu projeto e a fábrica em um único encontro.</p>
+
+          <!-- Honeypot anti-spam: bots preenchem, humanos não veem -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Não preencha este campo</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field" id="f-nome">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required />
+            <span class="error-msg">Por favor, informe seu nome.</span>
+          </div>
+
+          <div class="field" id="f-whatsapp">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" inputmode="numeric" placeholder="(00) 00000-0000" autocomplete="tel" required />
+            <span class="error-msg">Informe um WhatsApp válido com DDD.</span>
+          </div>
+
+          <div class="field" id="f-cidade">
+            <label for="cidade">Cidade</label>
+            <select id="cidade" name="cidade" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Indaial</option>
+              <option>Blumenau</option>
+              <option>Timbó</option>
+              <option>Pomerode</option>
+              <option>Gaspar</option>
+              <option>Brusque</option>
+              <option>Itajaí</option>
+              <option>Balneário Camboriú</option>
+              <option>Itapema</option>
+              <option>Outra</option>
+            </select>
+            <span class="error-msg">Selecione sua cidade.</span>
+          </div>
+
+          <div class="field" id="f-fase">
+            <label for="fase_projeto">Em que fase está seu projeto?</label>
+            <select id="fase_projeto" name="fase_projeto" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Estou pesquisando, sem prazo definido</option>
+              <option>Vou começar nos próximos 6 meses</option>
+              <option>Estou em obra agora</option>
+              <option>Obra pronta, vou mobiliar agora</option>
+            </select>
+            <span class="error-msg">Selecione a fase do seu projeto.</span>
+          </div>
+
+          <div class="field" id="f-faixa">
+            <label for="faixa_investimento">Faixa de investimento prevista para o ambiente</label>
+            <select id="faixa_investimento" name="faixa_investimento" required>
+              <option value="" selected disabled>Selecione…</option>
+              <option>Até R$ 15 mil</option>
+              <option>R$ 15 a 30 mil</option>
+              <option>R$ 30 a 60 mil</option>
+              <option>Acima de R$ 60 mil</option>
+              <option>Prefiro conversar antes</option>
+            </select>
+            <span class="error-msg">Selecione uma faixa.</span>
+          </div>
+
+          <!-- Campos ocultos de tracking (preenchidos via JS) -->
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="utm_content" value="" />
+          <input type="hidden" name="utm_term" value="" />
+          <input type="hidden" name="referrer" value="" />
+          <input type="hidden" name="landing_page_version" value="v2.0" />
+
+          <button type="submit" class="btn btn-primary">Quero agendar minha visita <span class="arrow">→</span></button>
+          <p class="microcopy">Seus dados estão seguros. Não enviamos spam.</p>
+        </form>
+
+        <!-- Mensagem de sucesso (mantém a pessoa na página) -->
+        <div class="form-card form-success" id="form-success" role="status" aria-live="polite">
+          <img class="emblema" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" />
+          <h3>Recebemos seu pedido!</h3>
+          <p>Entraremos em contato pelo WhatsApp em até 4 horas em horário comercial.</p>
+          <a href="#sec-galeria" class="btn btn-outline form-success__cta">Enquanto isso, conheça nossos projetos <span class="arrow">→</span></a>
+        </div>
+      </div>
     </div>
-    <div class="hero__scroll">role para descobrir</div>
   </section>
 
   <!-- ===================== SEÇÃO 2 — A DIFERENÇA QUE VOCÊ NÃO VÊ ===================== -->
@@ -393,6 +511,8 @@
           </div>
         </article>
       </div>
+
+      <div class="cta-band reveal"><a href="#formulario" class="btn btn-primary">Já estou pronto para agendar minha visita <span class="arrow">→</span></a></div>
     </div>
   </section>
 
@@ -529,6 +649,8 @@
           </footer>
         </blockquote>
       </div>
+
+      <div class="cta-band reveal"><a href="#formulario" class="btn btn-light">Quero conversar sobre meu projeto <span class="arrow">→</span></a></div>
     </div>
   </section>
 
@@ -559,7 +681,7 @@
           Sábado e domingo: fechado
         </div>
 
-        <a href="#sec-agendar" class="btn btn-primary">Agendar visita ao showroom <span class="arrow">→</span></a>
+        <a href="#formulario" class="btn btn-primary">Agendar visita ao showroom <span class="arrow">→</span></a>
 
         <div class="showroom__map">
           <iframe
@@ -572,100 +694,11 @@
     </div>
   </section>
 
-  <!-- ===================== SEÇÃO 7 — FORMULÁRIO (A CONVERSÃO) ===================== -->
-  <section class="section agendar" id="sec-agendar">
-    <img class="motif" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" style="right:-6%; bottom:-10%;" />
-    <div class="wrap agendar__grid">
-      <div class="agendar__intro reveal">
-        <p class="eyebrow"><span>Agendamento</span></p>
-        <h2>Agende sua visita <em>ao showroom.</em></h2>
-        <p>Atendimento personalizado, com hora marcada. Conte um pouco sobre seu projeto para que a gente prepare sua visita.</p>
-        <img class="emblema" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" />
-      </div>
-
-      <div class="reveal">
-        <form class="form-card" id="form-agendamento" novalidate>
-          <!-- Honeypot anti-spam: bots preenchem, humanos não veem -->
-          <div class="hp-field" aria-hidden="true">
-            <label for="website">Não preencha este campo</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="field" id="f-nome">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required />
-            <span class="error-msg">Por favor, informe seu nome.</span>
-          </div>
-
-          <div class="field" id="f-whatsapp">
-            <label for="whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" inputmode="numeric" placeholder="(00) 00000-0000" autocomplete="tel" required />
-            <span class="error-msg">Informe um WhatsApp válido com DDD.</span>
-          </div>
-
-          <div class="field" id="f-cidade">
-            <label for="cidade">Cidade</label>
-            <select id="cidade" name="cidade" required>
-              <option value="" selected disabled>Selecione…</option>
-              <option>Indaial</option>
-              <option>Blumenau</option>
-              <option>Timbó</option>
-              <option>Pomerode</option>
-              <option>Gaspar</option>
-              <option>Brusque</option>
-              <option>Itajaí</option>
-              <option>Balneário Camboriú</option>
-              <option>Itapema</option>
-              <option>Outra</option>
-            </select>
-            <span class="error-msg">Selecione sua cidade.</span>
-          </div>
-
-          <div class="field" id="f-fase">
-            <label for="fase_projeto">Em que fase está seu projeto?</label>
-            <select id="fase_projeto" name="fase_projeto" required>
-              <option value="" selected disabled>Selecione…</option>
-              <option>Estou pesquisando, sem prazo definido</option>
-              <option>Vou começar nos próximos 6 meses</option>
-              <option>Estou em obra agora</option>
-              <option>Obra pronta, vou mobiliar agora</option>
-            </select>
-            <span class="error-msg">Selecione a fase do seu projeto.</span>
-          </div>
-
-          <div class="field" id="f-faixa">
-            <label for="faixa_investimento">Faixa de investimento prevista para o ambiente</label>
-            <select id="faixa_investimento" name="faixa_investimento" required>
-              <option value="" selected disabled>Selecione…</option>
-              <option>Até R$ 15 mil</option>
-              <option>R$ 15 a 30 mil</option>
-              <option>R$ 30 a 60 mil</option>
-              <option>Acima de R$ 60 mil</option>
-              <option>Prefiro conversar antes</option>
-            </select>
-            <span class="error-msg">Selecione uma faixa.</span>
-          </div>
-
-          <!-- Campos ocultos de tracking (preenchidos via JS) -->
-          <input type="hidden" name="utm_source" value="" />
-          <input type="hidden" name="utm_medium" value="" />
-          <input type="hidden" name="utm_campaign" value="" />
-          <input type="hidden" name="utm_content" value="" />
-          <input type="hidden" name="utm_term" value="" />
-          <input type="hidden" name="referrer" value="" />
-          <input type="hidden" name="landing_page_version" value="v1.0" />
-
-          <button type="submit" class="btn btn-primary">Quero agendar minha visita <span class="arrow">→</span></button>
-          <p class="microcopy">Seus dados estão seguros. Não enviamos spam.</p>
-        </form>
-
-        <!-- Mensagem de sucesso -->
-        <div class="form-card form-success" id="form-success" role="status" aria-live="polite">
-          <img class="emblema" src="priorizze-assets/priorizze-emblema-terracota.png" alt="" aria-hidden="true" />
-          <h3>Recebemos seu pedido!</h3>
-          <p>Em até 4 horas em horário comercial, entraremos em contato pelo WhatsApp para confirmar o melhor dia e horário.</p>
-        </div>
-      </div>
+  <!-- ===================== CTA FINAL (volta ao formulário do Hero) ===================== -->
+  <section class="cta-final">
+    <div class="wrap reveal">
+      <h2>Pronto para <em>começar?</em></h2>
+      <a href="#formulario" class="btn btn-primary">Agendar visita <span class="arrow">→</span></a>
     </div>
   </section>
 
