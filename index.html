@@ -189,6 +189,8 @@
     .hero__badges { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 20px 0 0; }
     .hero__badges li { font-size: .76rem; font-weight: 600; color: #fff; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.28); padding: 7px 13px; border-radius: 50px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
     .hero__badges li::before { content: "✓"; color: var(--dourado); margin-right: 6px; font-weight: 700; }
+    .hero__parcela { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 0; padding: 11px 20px; background: var(--dourado); color: #3b2413; font-weight: 700; font-size: clamp(.98rem, 2.3vw, 1.15rem); border-radius: 50px; box-shadow: 0 14px 30px -12px rgba(212,165,116,.75); }
+    .hero__parcela strong { font-size: 1.3em; font-weight: 800; letter-spacing: .01em; }
     @media (max-width: 540px){ .hero__badges { display: none; } }
     .hero__form { z-index: 2; }
     .form-card__title { font-size: clamp(1.35rem, 4.4vw, 1.7rem); font-weight: 600; margin-bottom: 4px; }
@@ -388,6 +390,7 @@
       <div class="hero__left reveal">
         <h1>O mesmo MDF. <em>Outra experiência.</em></h1>
         <p class="hero__sub">Marcenaria de arquitetura em Indaial. Projeto autoral, fábrica própria e acabamento que dura décadas.</p>
+        <p class="hero__parcela">Parcelamos em até <strong>36x</strong></p>
         <ul class="hero__badges">
           <li>Arquiteta-dona</li>
           <li>Fábrica própria</li>
