@@ -57,6 +57,17 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=772470372244472&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- ===================== Google Ads (gtag.js) ===================== -->
+  <!-- Conversao: conta CA 03 - Priorizze Search / tag AW-18288025350 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288025350"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18288025350');
+  </script>
+  <!-- End Google Ads tag -->
+
   <style>
     /* ===================== Tokens ===================== */
     :root {
@@ -1010,6 +1021,17 @@
 
       // Dispara Lead (sempre) + Lead_Qualificado/Lead_Topo, com Advanced Matching (PII hashada SHA-256)
       dispararEventosPixel(baseParams, nomeVal, whatsVal, cidade, qualificado, faixa);
+
+      // Dispara conversao no Google Ads (mesmo gatilho do Lead). Nao interfere na Meta.
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18288025350/eugfCOvqts0cEIa-tJBE',
+            'value': 1.0,
+            'currency': 'BRL'
+          });
+        }
+      } catch (e) {}
 
       // ---- Envio do lead para a planilha Google (Apps Script Web App) ----
       var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzyLspvO92DJ65xJG7A2brvbGPc-PY5AAPFJbQq3En0h0EdaqJjIb_cZD0owE33ahVudw/exec';
